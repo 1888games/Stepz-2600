@@ -21,9 +21,13 @@ CheckFlash:
               ldy #sfxBeepHigh
               jsr SFX_TRIGGER
               
+             
+              
               jmp CheckBonus3
+              
 
-Lowa:
+Lowa:	
+	      sty usedPower
               ldy #sfxBeepLow
               jsr SFX_TRIGGER
 

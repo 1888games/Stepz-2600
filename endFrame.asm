@@ -18,7 +18,7 @@ NoKey:
          lda #START_Y
          sta playerY
          
-         lda #3
+         lda #2
          sta power
          
          lda #0

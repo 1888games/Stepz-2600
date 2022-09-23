@@ -47,22 +47,22 @@ Frame2
 ;---Color Data from PlayerPal 2600---
 
 ColorFrame0
-        .byte #$88;
-        .byte #$3E;
-        .byte #$3E;
+        .byte #BLUE + 8;
+        .byte #PINK + 15;
+        .byte #PINK + 15;
         .byte #BROWN +3;
 ColorFrame1
-        .byte #$68;
-        .byte #$66;
-        .byte #$3E;
-        .byte #$1E;
+        .byte #VIOLET + 10;
+    	.byte #PINK + 15;
+        .byte #PINK + 15;
+        .byte #YELLOW + 15
 
 
 ;---End Color Data---
 
 
 LiveCopies:	.byte 0, 0, 1, 3
-PowerScores:	.byte 0, $03, $06, $10
+PowerScores:	.byte 0, $05, $10, $10
 PrincessPositions:	.byte 2, 30, 62, 82, 110, 142, 62, 82
 	    	
 POT:		.byte 1, 2, 4, 8, 16, 32, 64, 128

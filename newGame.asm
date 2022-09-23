@@ -30,7 +30,7 @@ NewLevel:
             sta showPlayfield
             sta padding
             
-            lda #3
+            lda #2
             sta power
           
             

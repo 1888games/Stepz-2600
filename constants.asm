@@ -10,7 +10,7 @@ FACE_DURATION = 25	; Number of frames each face lasts on screen. Decrease to spe
 SPRITE_HEIGHT = 4; Native number of pixels tall the sprite is (before being stretched by a 2LK or whatever).
 NUM_ANIMATION_FACES = 1	; Number of faces of animation. (!)Corresponds with number of color tables(!)					; If true, sprite mirrors when moved left.
 
-KERNEL_LINES = 180
+
 
 THREE_COPIES = %011
 
@@ -30,13 +30,6 @@ HIDE_PER_LEVEL = 4
 START_LIVES = 3
 
 
-kernel_lines = 192
-playfield_lines = 45
-playfield_line_height = 3
-padding_lines = 1
-
-playfield_scanlines = #playfield_lines*#playfield_line_height
-remaining_lines = #kernel_lines-#playfield_scanlines-#padding_lines-2
 
 
 NO_ILLEGAL_OPCODES = 0
@@ -53,13 +46,24 @@ COMPILE_VERSION = NTSC
    
 VBLANK_TIME = 37
 OVERSCAN_TIME = 30
+kernel_lines = 192
+
 
     ELSE
     
-VBLANK_TIME = 45
-OVERSCAN_TIME = 36 + (228 - 192)
+VBLANK_TIME = 64
+OVERSCAN_TIME = 52
+kernel_lines = 192
 
     ENDIF
+
+playfield_lines = 45
+playfield_line_height = 3
+padding_lines = 1
+
+playfield_scanlines = #playfield_lines*#playfield_line_height
+remaining_lines = #kernel_lines-#playfield_scanlines-#padding_lines-2
+
 
 
 ;------------------------------------------------

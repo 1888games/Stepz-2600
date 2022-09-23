@@ -2,8 +2,10 @@
 NextFrame
 
 	VERTICAL_SYNC
-    lda #44
-    sta TIM64T
+        
+        TIMER_SETUP #VBLANK_TIME
+    ;lda #44
+    ;sta TIM64T
 
 ; My VBLANK code
 
@@ -12,8 +14,11 @@ NextFrame
         
 
 WaitVBlank
-    lda INTIM
-    bne WaitVBlank ; loop until timer expires
+   ; lda INTIM
+    ;bne WaitVBlank ; loop until timer expires
+    
+    TIMER_WAIT
+    
     sta WSYNC
     sta VBLANK
 
@@ -74,8 +79,8 @@ VisibleScreen2
     bne VisibleScreen2
     
 SetupOS
-    lda #36
-    sta TIM64T
+    TIMER_SETUP #OVERSCAN_TIME
+   ; sta TIM64T
     lda #2
     sta WSYNC
     sta VBLANK
@@ -138,9 +143,11 @@ CanFire:
 NotFire:
             
 WaitOverscan
-    lda INTIM
-    bne WaitOverscan
-    sta WSYNC
+   ; lda INTIM
+    ;bne WaitOverscan
+    ;sta WSYNC
+    
+    TIMER_WAIT
     
     jmp NextFrame
 

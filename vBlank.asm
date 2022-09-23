@@ -23,7 +23,7 @@ ResetSprites:
                 lda #GREEN + 10
                 sta COLUPF
 
-       	    	lda #12
+       	    	lda #YELLOW - 3 
             	sta pfColor
                 
                 ldx restarting
