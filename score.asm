@@ -55,7 +55,7 @@ IsHigh:		lda BCDScore
                 lda BCDScore + 1
                 sta BCDHigh + 1
                 lda BCDScore + 2
-                sta BCDScore + 2
+                sta BCDHigh + 1 + 2
 
 NoHighScore:
 

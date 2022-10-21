@@ -15,8 +15,7 @@ CheckGameOver:
  	lda #%10000000			; read button input
         bit INPT4
         bmi SkipFire
-	
-	
+		
 	inc fireHeld
         
         lda showPlayfield
@@ -35,15 +34,10 @@ SkipFire:
         lda #0
         sta keyY
 
-        inc restarting
-        
-        
+        inc restarting       
 
         jsr ResetGame
-        
-  
-
-                
+                   
 NoFireButton:  
 
 	jmp NoKey

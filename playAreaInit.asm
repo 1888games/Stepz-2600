@@ -10,6 +10,5 @@
                 sta COLUBK
          
        		
-    
                ; TIMER_SETUP 180
 		

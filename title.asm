@@ -10,8 +10,7 @@ NextFrame
 ; My VBLANK code
 
 	inc frameCounter
-        
-        
+      	
 
 WaitVBlank
    ; lda INTIM

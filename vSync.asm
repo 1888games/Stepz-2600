@@ -18,8 +18,6 @@ StartOfFrame:
 UseGameKernal:                       ; Enable VBLANK (disable output)
                 lda #2
                 sta VBLANK
-        ; At the beginning of the frame we set the VSYNC bit...
-                lda #2
                 sta VSYNC
                 
                 

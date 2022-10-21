@@ -24,8 +24,8 @@ NoKey:
          lda #0
          sta frameCounter
        
-         
-         
+     
+          
 NoDelay:
 
 	  sta  CXCLR 

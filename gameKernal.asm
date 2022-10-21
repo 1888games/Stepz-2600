@@ -4,7 +4,7 @@
 ; Picture (192 scanlines)
 ;------------------------------------------------		
         	
-		
+	
 
 ResetForGame:	
 		
@@ -64,9 +64,12 @@ LineLoop:
                
              
 NoBounce:                
-               	
-	
-        	SLEEP 27
+               	  SLEEP 24
+		jmp KernalRowLoop
+         
+        	
+               ALIGN 256
+             
 KernalRowLoop:
 
 	;MAC ROW_KERNAL
@@ -138,9 +141,7 @@ KernalRowLoop:
 .EndLoop          
 			;3
                	dec kernelY
-                
-               	
-                
+          
                 lda yUse 
                  sty WSYNC
                 beq .NoPlayer2
@@ -209,31 +210,7 @@ Finished:
                 sec
                 sbc gameOver
                 sta delayTimer
-          ;ENDM
-              
-    	;ROW_KERNAL
-        ;ROW_KERNAL
-        ;ROW_KERNAL
-        ;ROW_KERNAL
-        ;ROW_KERNAL
-        ;ROW_KERNAL
-        ;ROW_KERNAL
-        ;ROW_KERNAL
-      	;ROW_KERNAL
-        ;ROW_KERNAL
-        ;ROW_KERNAL
-        ;ROW_KERNAL
-        ;;ROW_KERNAL
-        ;ROW_KERNAL
-
-     
-
-        
-        
-        
-           
-                
-             
+         
                 
                  
                 

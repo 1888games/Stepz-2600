@@ -11,9 +11,7 @@ SetupVBlankTimer:
 ResetSprites:
  		
             	lda #0
-                sta VBLANK
-                
-                lda #0
+                sta VBLANK 
                 sta PF0
                 sta PF1
                 sta PF2

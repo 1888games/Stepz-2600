@@ -20,9 +20,7 @@ CheckFlash:
          
               ldy #sfxBeepHigh
               jsr SFX_TRIGGER
-              
-             
-              
+                 
               jmp CheckBonus3
               
 
@@ -78,7 +76,10 @@ NoSwitch:
               cmp blockCount
               beq FillBlock
 
-              jmp DontHide
+              lda moveDuringShow
+              bne NoNewBlock
+              
+              jmp DontHide 
                 
 NoNewBlock:
                 
@@ -92,7 +93,6 @@ FillBlock:
                 
                 jsr Random
                 and #%00011111
-                clc
                 adc #1
                 tax
                 stx brickIndex

@@ -73,8 +73,10 @@ NoReset:
         lda isMoving
         beq NotMoving
         
-        inc steps
-        inc steps
+        lda steps
+        adc #2
+        sta steps
+
         lda steps
         and #%00000111
         bne NotMoving
@@ -84,7 +86,7 @@ NoReset:
         
         jsr AddOne
         
-      
+      	
         
         
 NotMoving:

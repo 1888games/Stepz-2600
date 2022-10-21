@@ -44,7 +44,7 @@ AddOne:
 	
 	sed
         clc
-        lda #5
+       lda #5
         adc BCDScore
         sta BCDScore
         lda BCDScore + 1
@@ -72,6 +72,18 @@ noeor
         eor Rand16      ; this command is only used if Rand16 has been defined
  endif
         rts
+        
+ResetStuff:
+
+		lda #0
+                sta HMP0
+                sta HMP1
+               
+               
+ 		;
+                sta GRP0
+                sta GRP1                
+                rts
    
 ResetGame:
    	    lda #0

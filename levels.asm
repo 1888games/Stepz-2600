@@ -17,14 +17,15 @@ LevelOrder:	.byte 1, 0, 2, 6, 5, 7, 3, 8, 11, 12, 13, 14, 15, 4, 10, 9
 
 
 GetLevelData:
-	
-   
+
         
         lda levelID
         and #%00011111
         tax
         lda LevelOrder,x
         tax
+        
+        
         
         lda LevelDataKeyX,x
         sta keyX

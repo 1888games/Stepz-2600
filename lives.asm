@@ -7,7 +7,6 @@
                 lda LiveCopies,y
                 sta NUSIZ1
                 
-                  
                 lda YELLOW + 15
                 sta COLUP1
                 
@@ -18,6 +17,7 @@
                 ldx #1
                 lda #60
                 jsr placeSprite
+                
  		
                 ldy #3
 LivesLoop:         
@@ -35,9 +35,15 @@ NoLives:
 		
                 lda power
                 beq NoPower
- 
+              
                 lda Frame2,y
                 sta GRP1
+                
+                lda lives
+                bne NoPower
+                
+                sta GRP0
+
 NoPower:
 
  		sta WSYNC                
@@ -47,16 +53,11 @@ NoPower:
                 
                 
 SkipLives:            
-
-		lda #0
-                sta HMP0
-                sta HMP1
- 		sta GRP1
-                sta GRP0
-                
-              	TIMER_WAIT
 		
+		jsr ResetStuff
              
+              	TIMER_WAIT
+	
 		lda #%00000010				;2
 		sta VBLANK           		;3 end of screen - enter blanking
                
@@ -65,7 +66,7 @@ SkipLives:
             ;------------------------------------------------
 ; Overscan (30 scanlines)
 ;----------------------------- -------------------
-		TIMER_SETUP #OVERSCAN_TIME - 3
+		TIMER_SETUP #OVERSCAN_TIME - 2
          
               
 		; Manage the frame delay between face animations.

@@ -70,6 +70,6 @@ steps			ds 1
 isMoving		ds 1
 bounceAmount		ds 1
 yUse			ds 1
-switched		ds 1
+moveDuringShow		ds 1
  
  
